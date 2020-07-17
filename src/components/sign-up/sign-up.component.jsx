@@ -9,6 +9,7 @@ import "./sign-up.styles.scss";
 class SignUp extends Component {
     constructor(){
         super();
+        
         this.state = {
             displayName: "",
             email: "",
