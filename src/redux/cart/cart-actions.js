@@ -10,3 +10,11 @@ export const addItem = item => ({
     type: CartActionTypes.ADD_ITEM,
     payload: item
 })
+
+export const clearItemFromCart = item => {
+    return{
+        type: CartActionTypes.CLEAR_ITEMS_FROM_CART,
+        payload: item
+    }
+
+}

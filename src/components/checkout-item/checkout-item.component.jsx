@@ -1,7 +1,10 @@
 import React from "react";
 import "./checkout-item.styles.scss";
+import { connect } from "react-redux";
+import { clearItemFromCart } from "../../redux/cart/cart-actions";
 
-const CheckoutItem = ({cartItem: {name, imageUrl, price, quantity}}) => {
+const CheckoutItem = ({cartItem, clearItemFromCart}) => {
+    const {name, imageUrl, price, quantity} = cartItem;
     return(
         <div className="checkout-item">
             <div className="image-container">
@@ -10,9 +13,9 @@ const CheckoutItem = ({cartItem: {name, imageUrl, price, quantity}}) => {
             <span className="name">{name}</span>
             <span className="quantity">{quantity}</span>
             <span className="price">{price}</span>
-            <div className="remove-button">&#10005;</div>
+            <div className="remove-button" onClick={() => clearItemFromCart(cartItem)}>&#10005;</div>
         </div>
     )
 };
 
-export default CheckoutItem;
+export default connect(null, { clearItemFromCart })(CheckoutItem);
