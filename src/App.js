@@ -60,4 +60,4 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 })
 
-export default connect(mapStateToProps, {setCurrentUser})(App);
+export default connect(mapStateToProps, { setCurrentUser })(App);
